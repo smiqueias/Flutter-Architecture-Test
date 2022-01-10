@@ -29,6 +29,14 @@ dependencies:
   # Core
   ###
   google_fonts: ^2.2.0
+  flutter_svg: ^1.0.0
+  dio: ^4.0.4
+  equatable: ^2.0.3
+
+  ###
+  # State Management
+  ###
+  flutter_bloc: ^8.0.1
 
   ###
   # DI

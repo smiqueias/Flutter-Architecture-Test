@@ -7,23 +7,24 @@ class AppTextStyle {
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
   );
-  static final ubuntuRegular20 = GoogleFonts.ubuntu(
+  final ubuntuRegular20 = GoogleFonts.ubuntu(
     fontSize: 20.sp,
   );
-  static final ubuntuRegular20Bold = GoogleFonts.ubuntu(
+  final ubuntuRegular20Bold = GoogleFonts.ubuntu(
     fontSize: 20.sp,
+    fontWeight: FontWeight.bold,
   );
-  static final ubuntuRegular16 = GoogleFonts.ubuntu(
+  final ubuntuRegular16 = GoogleFonts.ubuntu(
     fontSize: 16.sp,
   );
-  static final ubuntuRegular16Bold = GoogleFonts.ubuntu(
+  final ubuntuRegular16Bold = GoogleFonts.ubuntu(
     fontSize: 16.sp,
     fontWeight: FontWeight.bold,
   );
-  static final ubuntuRegular14 = GoogleFonts.ubuntu(
+  final ubuntuRegular14 = GoogleFonts.ubuntu(
     fontSize: 14.sp,
   );
-  static final ubuntuRegular14Bold = GoogleFonts.ubuntu(
+  final ubuntuRegular14Bold = GoogleFonts.ubuntu(
     fontSize: 14.sp,
     fontWeight: FontWeight.bold,
   );
