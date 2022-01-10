@@ -34,11 +34,6 @@ dependencies:
   equatable: ^2.0.3
 
   ###
-  # State Management
-  ###
-  flutter_bloc: ^8.0.1
-
-  ###
   # DI
   ###
   get_it: ^7.2.0

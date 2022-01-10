@@ -1,22 +1,22 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_architecture_test/src/modules/home/domain/usecases/get-specialists/get_specialists_usecase.dart';
-import 'package:flutter_architecture_test/src/modules/home/presenter/screens/home/bloc/specialist_card_state.dart';
+import 'package:flutter_architecture_test/src/modules/home/presenter/screens/home/view-model/specialist_card_state.dart';
 import 'package:flutter_architecture_test/src/utils/log.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SpecialistCardBloc extends Cubit<SpecialistCardState> {
+class SpecialistCardVM extends ValueNotifier<SpecialistCardState> {
   final GetSpecialistsUseCase _getSpecialistsUseCase;
 
-  SpecialistCardBloc(this._getSpecialistsUseCase) : super(SpecialistCardInitial()) {
+  SpecialistCardVM(this._getSpecialistsUseCase) : super(SpecialistCardInitial()) {
     getSpecialists();
   }
 
   Future<void> getSpecialists() async {
+    value = SpecialistCardLoading();
     try {
-      emit(SpecialistCardLoading());
       await Future.delayed(const Duration(seconds: 2));
       final specialist = await _getSpecialistsUseCase.getSpecialists();
-      emit(SpecialistCardLoaded(specialist));
+      value = SpecialistCardLoaded(specialist);
     } on DioError catch (e, st) {
       Log.log(
         "Error in SpecialistCardBloc",
@@ -24,9 +24,9 @@ class SpecialistCardBloc extends Cubit<SpecialistCardState> {
         stackTrace: st,
       );
       if (e.type == DioErrorType.other) {
-        emit(const SpecialistCardFailure('Connection timeout, please check your internet connection'));
+        value = const SpecialistCardFailure('Connection timeout, please check your internet connection');
       } else {
-        emit(const SpecialistCardFailure('Ocorreu uym erro'));
+        value = const SpecialistCardFailure('Ocorreu um erro');
       }
     }
   }

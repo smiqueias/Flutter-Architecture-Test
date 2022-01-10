@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_test/src/core/theme/app_theme.dart';
 import 'package:flutter_architecture_test/src/modules/home/domain/entities/specialist_entity.dart';
-import 'package:flutter_architecture_test/src/modules/home/presenter/components/specialist_card_component.dart';
+import 'package:flutter_architecture_test/src/modules/home/presenter/screens/components/specialist_card_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpecialistsCardsView extends StatelessWidget {
