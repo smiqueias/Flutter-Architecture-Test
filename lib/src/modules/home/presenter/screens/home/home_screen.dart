@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_test/src/core/network/dio_service.dart';
+import 'package:flutter_architecture_test/src/core/data/services/network_service_impl.dart';
 import 'package:flutter_architecture_test/src/core/theme/app_theme.dart';
 import 'package:flutter_architecture_test/src/modules/home/data/repositories/specialists_repository_impl.dart';
 import 'package:flutter_architecture_test/src/modules/home/domain/usecases/get-specialists/get_specialists_usecase_impl.dart';
-import 'package:flutter_architecture_test/src/modules/home/presenter/screens/components/dashboard_card_component.dart';
-import 'package:flutter_architecture_test/src/modules/home/presenter/screens/components/shimmer_loading.dart';
+import 'package:flutter_architecture_test/src/modules/home/presenter/screens/home/views/specialist_card_shimmer_loading_view.dart';
 import 'package:flutter_architecture_test/src/modules/home/presenter/screens/home/view-model/specialist_card_state.dart';
 import 'package:flutter_architecture_test/src/modules/home/presenter/screens/home/view-model/specialist_card_vm.dart';
 import 'package:flutter_architecture_test/src/modules/home/presenter/screens/home/views/error_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'components/dashboard_card_component.dart';
 import 'views/specialists_cards_view.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
+  static const String routeName = '/';
+
   final currentIndex = ValueNotifier<int>(0);
 
-  SpecialistCardVM viewModel = SpecialistCardVM(GetSpecialistsUseCaseImpl(SpecialistsRepositoryImpl(DioServiceImpl())));
+  SpecialistCardVM viewModel = SpecialistCardVM(GetSpecialistsUseCaseImpl(SpecialistsRepositoryImpl(NetworkServiceImpl())));
 
   _onItemTapped(int index) => currentIndex.value = index;
 
@@ -52,7 +53,7 @@ class HomeScreen extends StatelessWidget {
               ValueListenableBuilder(
                 valueListenable: viewModel,
                 builder: (context, SpecialistCardState state, _) => state.when(
-                  loading: () => const ShimmerLoading(),
+                  loading: () => const SpecialistCardShimmerLoadingView(),
                   loaded: (state) => SpecialistsCardsView(specialists: state),
                   failure: (_) => ErrorView(viewModel: viewModel),
                   orElse: () => const SizedBox.shrink(),

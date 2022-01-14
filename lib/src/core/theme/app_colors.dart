@@ -10,5 +10,5 @@ class AppColors {
   Color redDark = const Color(0xFF504C4C);
   Color magenta = const Color(0xFF4D484E);
   Color white = const Color(0xFFFFFFFF);
-  Color shimmerColor = Colors.black.withOpacity(0.04);
+  Color shimmerColor = Colors.black.withOpacity(0.08);
 }

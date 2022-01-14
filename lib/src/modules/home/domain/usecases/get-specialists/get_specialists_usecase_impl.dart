@@ -4,12 +4,12 @@ import 'package:flutter_architecture_test/src/modules/home/domain/repositories/s
 import 'get_specialists_usecase.dart';
 
 class GetSpecialistsUseCaseImpl implements GetSpecialistsUseCase {
-  final SpecialistsRepository specialistsRepository;
+  final SpecialistsRepository _specialistsRepository;
 
-  GetSpecialistsUseCaseImpl(this.specialistsRepository);
+  GetSpecialistsUseCaseImpl(this._specialistsRepository);
 
   @override
   Future<List<SpecialistEntity>> getSpecialists() {
-    return specialistsRepository.getSpecialists();
+    return _specialistsRepository.getSpecialists();
   }
 }

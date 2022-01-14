@@ -15,12 +15,23 @@ class App extends StatelessWidget {
         title: "Flutter architecture test",
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          appBarTheme: AppBarTheme(
+            backgroundColor: AppTheme.colors.white,
+            elevation: 0,
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              onPrimary: AppTheme.colors.white,
+              primary: AppTheme.colors.redDark,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.0.r)),
+            ),
+          ),
           scaffoldBackgroundColor: AppTheme.colors.white,
         ),
         initialRoute: "/",
         routes: {
-          '/': (context) => HomeScreen(),
-          '/heart-specialist': (context) => const HeartSpecialistScreen(),
+          HomeScreen.routeName: (context) => HomeScreen(),
+          HeartSpecialistScreen.routeName: (context) => HeartSpecialistScreen(),
         },
       ),
     );

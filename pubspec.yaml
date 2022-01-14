@@ -32,6 +32,7 @@ dependencies:
   flutter_svg: ^1.0.0
   dio: ^4.0.4
   equatable: ^2.0.3
+  mocktail: ^0.2.0
 
   ###
   # DI

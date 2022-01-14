@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_test/src/core/theme/app_theme.dart';
 import 'package:flutter_architecture_test/src/modules/home/domain/entities/specialist_entity.dart';
-import 'package:flutter_architecture_test/src/modules/home/presenter/screens/components/specialist_card_component.dart';
+import 'package:flutter_architecture_test/src/modules/home/presenter/screens/home/components/specialist_card_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpecialistsCardsView extends StatelessWidget {
@@ -60,6 +60,7 @@ class SpecialistsCardsView extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 6.w),
             child: SpecialistCardComponent(
+              index: index,
               labelSpecialist: specialists[index].name,
               numberDoctors: specialists[index].total.toString(),
               icon: setSpecialistIcon(index),

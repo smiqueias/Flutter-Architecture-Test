@@ -35,9 +35,6 @@ class ErrorView extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 onPrimary: AppTheme.colors.white,
                 primary: AppTheme.colors.redDark,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22.r),
-                ),
               ),
               onPressed: () {
                 viewModel.getSpecialists();

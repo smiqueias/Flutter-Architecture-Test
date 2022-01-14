@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_test/src/core/theme/app_theme.dart';
+import 'package:flutter_architecture_test/src/modules/heart-specialist/presenter/sceens/heart-specialist/heart_specialist_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SpecialistCardComponent extends StatelessWidget {
   final String icon;
+  final int index;
   final String labelSpecialist;
   final String numberDoctors;
   final Color backgroundColor;
@@ -17,12 +19,20 @@ class SpecialistCardComponent extends StatelessWidget {
     required this.numberDoctors,
     required this.backgroundColor,
     required this.iconColor,
+    required this.index,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => print('Tapped'),
+      onTap: () {
+        switch (index) {
+          case 0:
+            Navigator.pushNamed(context, HeartSpecialistScreen.routeName);
+            break;
+          default:
+        }
+      },
       child: Container(
         height: 150.h,
         width: 115.w,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_architecture_test/src/core/theme/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ShimmerLoading extends StatelessWidget {
-  const ShimmerLoading({Key? key}) : super(key: key);
+class SpecialistCardShimmerLoadingView extends StatelessWidget {
+  const SpecialistCardShimmerLoadingView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,5 @@ class ShimmerLoading extends StatelessWidget {
         );
       }),
     );
-    ;
   }
 }

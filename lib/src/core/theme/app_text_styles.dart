@@ -14,6 +14,16 @@ class AppTextStyle {
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
   );
+
+  final ubuntuRegular18 = GoogleFonts.ubuntu(
+    fontSize: 18.sp,
+  );
+
+  final ubuntuRegular18Bold = GoogleFonts.ubuntu(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.bold,
+  );
+
   final ubuntuRegular16 = GoogleFonts.ubuntu(
     fontSize: 16.sp,
   );
